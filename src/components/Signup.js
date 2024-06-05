@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
-const Signup = () => {
+const Signup = (props) => {
     const host = "http://localhost:5000";
     const [credentials, setCredentials] = useState({ name: '', email: '', password: '', cpassword: '' })
 
@@ -24,13 +24,15 @@ const Signup = () => {
             if (user.success) {
                 //redirect to HomePage
                 localStorage.setItem("token", user.authToken);
+                console.log(localStorage.getItem("token"));
                 navigate('/');
+                props.showAlert("Account is created successfully", "success");
             } else {
                 //show error message
-                alert("Invalid credentials or user already exist")
+                props.showAlert("User already axists with the same email id", "danger")
             }
         } else {
-            alert("Passwords do not match")
+            props.showAlert("Password and conform password are not same", "danger")
         }
 
     }
