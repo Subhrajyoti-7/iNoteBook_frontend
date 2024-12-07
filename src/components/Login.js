@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import './css/login.css';
+// import bgImage from './images/lg-background.png';
 
 const Login = (props) => {
     const host = "http://localhost:5000";
@@ -38,8 +40,8 @@ const Login = (props) => {
     };
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
+        <div className='mainContainer'>
+            <form onSubmit={handleSubmit} className='lgContainer'>
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label">Email address</label>
                     <input type="email" value={credentials.email} className="form-control" id="email" aria-describedby="emailHelp" onChange={onChange} />

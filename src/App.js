@@ -23,14 +23,12 @@ function App() {
         <Router>
           <Navbar />
           <Alert alert={alert} />
-          <div className='container'>
-            <Routes>
-              <Route path="/" element=<Home /> />
-              <Route path="/about" element=<About /> />
-              <Route path="/login" element=<Login showAlert={showAlert} /> />
-              <Route path="/signup" element=<Signup showAlert={showAlert} /> />
-            </Routes>
-          </div>
+          <Routes>
+            <Route path="/" element=<Home /> />
+            <Route path="/about" element=<About /> />
+            <Route path="/login" element=<Login showAlert={showAlert} /> />
+            <Route path="/signup" element=<Signup showAlert={showAlert} /> />
+          </Routes>
         </Router>
       </NoteState>
     </>
